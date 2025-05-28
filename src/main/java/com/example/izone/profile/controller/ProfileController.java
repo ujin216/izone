@@ -1,6 +1,8 @@
 package com.example.izone.profile.controller;
 
 import com.example.izone.profile.service.ProfileService;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,4 +21,15 @@ public class ProfileController {
     }
 
     // 기능
+
+    // 프로필 조회
+//    @GetMapping("/users/{userId}/Profile")
+
+    // 프로필 수정
+//    @PatchMapping("/users/{userId}Profile")
+
+    // 비밀번호 변경
+//    @PatchMapping("/users/{userId}/password")
+
+
 }
