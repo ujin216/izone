@@ -1,9 +1,7 @@
 package com.example.izone.domain.profile.service;
 
 
-import com.example.izone.domain.profile.Dto.ResponseDto;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 // 어노테이션
 @Service
@@ -13,24 +11,21 @@ public class ProfileService {
     // 속성
 
     // 생성자
-//    ProfileService(UserRepository userRepository, PasswordEncoder passwordEncoder){
+    ProfileService(UserRepository userRepository, PasswordEncoder passwordEncoder){
 
-//        this.userRepository = userRepository;
-//        this.passwordEncoder = passwordEncoder;
-
-
-//    }
+        this.userRepository = userRepository;
+        this.passwordEncoder = passwordEncoder;
 
 
-
-
+    }
 
     // 기능
         // 프로필 조회
-//    @Transactional
-//    public ResponseDto getProfile(Long userId) {
-//        User finduser = userRepository.findById
-//    }
+    @Transactional
+    public ProfileResponseDto getProfile(Long userId) {
+        User findUser = userRepository.findById(userId)
+                .orElseThrow(() - new IllegalAccessException("요청하신 사용자가 없습니다."))
+    }
 
 
         // 프로필 수정
