@@ -1,8 +1,6 @@
-package com.example.izone.profile.controller;
+package com.example.izone.domain.profile.controller;
 
-import com.example.izone.profile.service.ProfileService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PatchMapping;
+import com.example.izone.domain.profile.service.ProfileService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
