@@ -2,6 +2,7 @@ package com.example.izone.domain.profile.service;
 
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 // 어노테이션
 @Service
@@ -24,11 +25,16 @@ public class ProfileService {
     @Transactional
     public ProfileResponseDto getProfile(Long userId) {
         User findUser = userRepository.findById(userId)
-                .orElseThrow(() - new IllegalAccessException("요청하신 사용자가 없습니다."))
+                .orElseThrow(() -> new IllegalAccessException("요청하신 사용자를 찾을 수 없습니다."));
     }
 
 
         // 프로필 수정
+    @Transactional
+    public void editProfile = (Long userId, ProfileRequestDto editDto) {
+        User findUser = userRepository.findById(userId)
+                .orElseThrow(() -> new IllegalAccessException("요청하신 사용자를 찾을 수 없습니다."));
+    }
 
 
 
