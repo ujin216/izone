@@ -1,16 +1,18 @@
 package com.example.izone.domain.follow.domain.model;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.example.izone.domain.entitiy.User;
+import jakarta.persistence.*;
 
 @Entity
 public class Follow {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @ManyToOne
+    @JoinColumn(name = "follower_id")
     private User followerId;
+    @ManyToOne
+    @JoinColumn(name = "followed_id")
     private User followedId;
 }
