@@ -35,7 +35,7 @@ public class User extends BasicEntitiy {
         this.email = email;
         this.passwordHash = passwordHash;
         this.name = name;
-        this.intro = intro !=null ? intro : "?";
+        this.intro = intro !=null ? intro : "";
         this.age = age;
 
     }
