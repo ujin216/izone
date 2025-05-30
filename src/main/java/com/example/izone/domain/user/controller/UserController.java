@@ -10,12 +10,13 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
+@RequestMapping("/api/users")
 public class UserController {
     private final UserService userService;
 
-@PostMapping("/signup")
-public ResponseEntity<Void> signup(@RequestBody @Valid SignupRequest request) {
-    userService.signup(request.getEmail(),
-            request.getPassword(), request.getName(), request.getIntro(), request.getAge());
-        return ResponseEntity.status(HttpStatus.OK).build();}
+    @PostMapping("/signup")
+    public ResponseEntity<String> signup(@RequestBody @Valid SignupRequest signupRequest) {
+        userService.signup(signupRequest);
+        return ResponseEntity.status(HttpStatus.OK).body("회원가입 완료되었습니다");
+    }
 }
