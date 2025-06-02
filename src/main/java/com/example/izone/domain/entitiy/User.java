@@ -2,7 +2,8 @@ package com.example.izone.domain.entitiy;
 
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 
 @Entity
@@ -12,7 +13,8 @@ import lombok.*;
 
 public class User extends BasicEntitiy {
 
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long userId;
 
     @Column(unique = true, nullable = false, length = 200)
@@ -30,12 +32,12 @@ public class User extends BasicEntitiy {
     @Column(nullable = false)
     private Integer age; //나이
 
-    public User(String email, String passwordHash, String name, String intro, Integer age) {
 
+    public User(String email, String passwordHash, String name, String intro, Integer age) {
         this.email = email;
         this.passwordHash = passwordHash;
         this.name = name;
-        this.intro = intro !=null ? intro : "?";
+        this.intro = intro != null ? intro : "?";
         this.age = age;
 
     }
